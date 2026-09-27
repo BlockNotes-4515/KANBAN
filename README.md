@@ -965,7 +965,7 @@ This project is developed for educational and personal development purposes.
 
 **A simple workflow for turning tasks into progress.**
 <p align="center">
-  <strong>PLANORA</strong> · Plan. Organize. Track. Complete.
+  <strong>KANBAN BOARD</strong> · Plan. Organize. Track. Complete.
   <br>
   <a href="https://github.com/your-username/planora">GitHub Repository</a>
   ·
