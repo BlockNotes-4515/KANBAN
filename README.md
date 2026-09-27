@@ -10,7 +10,7 @@ The project is developed using **HTML5, CSS3, and JavaScript**, with a strong fo
 <br>
 <hr>
 <p align="center">
-  <img src="media/Red and White Bold Typography New York Logo1.png" alt="Planora Logo" width="150">
+  <img src="media/Red and White Bold Typography New York Logo1.png" alt="Planora Logo" width="600">
 </p>
 <hr>
 <br>
@@ -57,7 +57,7 @@ Planora addresses this problem by introducing a Kanban-style workflow where ever
 <br>
 <hr>
 <p align="center">
-  <img src="media/workflow diagram.png" alt="Planora Logo" width="150">
+  <img src="media/workflow diagram.png" alt="Planora Workflow Diagram" width="900">
 </p>
 <hr>
 <br>
