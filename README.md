@@ -964,3 +964,14 @@ This project is developed for educational and personal development purposes.
 ```
 
 **A simple workflow for turning tasks into progress.**
+<p align="center">
+  <strong>PLANORA</strong> · Plan. Organize. Track. Complete.
+  <br>
+  <a href="https://github.com/your-username/planora">GitHub Repository</a>
+  ·
+  <a href="https://github.com/your-username/planora/issues">Report an Issue</a>
+  <br><br>
+  Built with @dhayaldhruvL • Built • Code • Implement
+  <br>
+  © 2026 Dhruv Dhayal
+</p>
