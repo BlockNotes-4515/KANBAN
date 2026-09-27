@@ -1,0 +1,437 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+:root {
+    --bg-color: #000000;
+    --bg-button-color: #1a1a1a;
+    --bg-task-color: #2a2a2a;
+    --primary-text-color: #f4f4f4;
+    --delete-color: #ff4d4d;
+    /* Padding */
+    --nav-padding: 15px 30px;
+    --section-padding: 15px 30px;
+    --padding-s: 5px;
+    --padding-m: 10px;
+    --padding-l: 15px;
+    --padding-xl: 20px;
+    --padding-xxl: 30px;
+    /* Border Radius */
+    --border-radius-s: 5px;
+    --border-radius-m: 10px;
+    --border-radius-l: 15px;
+    --border-radius-xl: 20px;
+    --border-radius-xxl: 30px;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--primary-text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+main {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    padding: var(--nav-padding);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-color);
+    z-index: 100;
+    transition: background-color 0.3s ease;
+}
+
+nav button {
+    background-color: var(--bg-button-color);
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-text-color);
+    cursor: pointer;
+    padding: var(--padding-m) var(--padding-l);
+    border-radius: var(--border-radius-m);
+}
+
+section {
+    padding: var(--section-padding);
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    gap: var(--padding-xxl);
+}
+
+section .task-column {
+    background-color: var(--bg-button-color);
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-m);
+    padding: var(--border-radius-m);
+    border-radius: var(--border-radius-m);
+    transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+section .task-column.hover-over {
+    border: 2px dashed var(--primary-text-color);
+    scale: 1.02;
+}
+
+section .task-column .heading {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section .task-column .task {
+    background-color: var(--bg-task-color);
+    padding: var(--padding-m);
+    border-radius: var(--border-radius-m);
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-s);
+    cursor: grab;
+}
+
+section .task-column .task button {
+    align-self: flex-end;
+    cursor: pointer;
+    padding: var(--padding-s) var(--padding-m);
+    border: none;
+    outline: none;
+    border-radius: var(--border-radius-s);
+    background-color: var(--delete-color);
+    color: var(--primary-text-color);
+}
+
+.modal {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 500;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal .center {
+    background-color: var(--bg-button-color);
+    padding: var(--padding-xxl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-m);
+    z-index: 10;
+    border-radius: var(--border-radius-s);
+}
+
+.modal .bg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(61, 61, 61, 0.404);
+    backdrop-filter: blur(5px);
+}
+
+.modal .center input,
+.modal .center textarea {
+    background-color: var(--bg-task-color);
+    border: none;
+    outline: none;
+    padding: var(--padding-m);
+    border-radius: var(--border-radius-s);
+    color: var(--primary-text-color);
+}
+
+.modal .center button {
+    background-color: var(--bg-task-color);
+    border: none;
+    outline: none;
+    padding: var(--padding-m) var(--padding-l);
+    border-radius: var(--border-radius-m);
+    color: var(--primary-text-color);
+    cursor: pointer;
+    width: fit-content;
+    align-self: center;
+}
+
+.app-footer {
+    min-height: 55px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #333;
+    color: #888;
+    font-size: 11px;
+}
+
+.app-footer span:first-child {
+    color: var(--primary-text-color);
+    font-weight: 600;
+}
+
+
+/* ========================= */
+
+
+/* THEME TOGGLE */
+
+
+/* ========================= */
+
+.theme-toggle {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 45px;
+    height: 45px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    background: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.08);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
+
+/* Dark Mode */
+
+.theme-toggle .sun {
+    display: none;
+}
+
+.theme-toggle .moon {
+    display: block;
+}
+
+
+/* ========================= */
+
+
+/* LIGHT / LINEN THEME */
+
+
+/* ========================= */
+
+body.light-theme {
+    --bg-color: #eee9dc;
+    --bg-button-color: #f6f2e8;
+    --bg-task-color: #e4ddcc;
+    --primary-text-color: #24221d;
+    --delete-color: #d94b45;
+}
+
+body.light-theme .theme-toggle {
+    background: #f8f5ed;
+    color: #171612;
+    border-color: #c9c1af;
+    box-shadow: 0 5px 18px rgba(70, 60, 40, 0.15), inset 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+body.light-theme .theme-toggle .sun {
+    display: block;
+}
+
+body.light-theme .theme-toggle .moon {
+    display: none;
+}
+
+
+/* ========================= */
+
+
+/* TABLET */
+
+
+/* ========================= */
+
+@media (max-width: 900px) {
+    nav {
+        padding: 15px 20px;
+    }
+    section {
+        padding: 15px 20px;
+        gap: 15px;
+    }
+    section .task-column {
+        padding: 10px;
+    }
+}
+
+
+/* ========================= */
+
+
+/* MOBILE */
+
+
+/* ========================= */
+
+@media (max-width: 700px) {
+    nav {
+        padding: 14px 15px;
+    }
+    nav button {
+        padding: 9px 12px;
+        font-size: 12px;
+    }
+    section {
+        flex-direction: column;
+        padding: 12px 15px;
+        gap: 12px;
+    }
+    section .task-column {
+        width: 100%;
+        min-height: 180px;
+        flex-grow: 0;
+    }
+    .modal .center {
+        width: calc(100% - 30px);
+        max-width: 420px;
+        padding: 20px;
+    }
+    .modal .center input,
+    .modal .center textarea {
+        width: 100%;
+    }
+    .app-footer {
+        min-height: 55px;
+        padding: 12px 15px;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        text-align: center;
+    }
+    .theme-toggle {
+        right: 18px;
+        bottom: 18px;
+        width: 43px;
+        height: 43px;
+    }
+}
+
+
+/* ========================= */
+
+
+/* SMALL MOBILE */
+
+
+/* ========================= */
+
+@media (max-width: 400px) {
+    nav {
+        padding: 12px;
+    }
+    nav button {
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+    section {
+        padding: 10px 12px;
+    }
+    section .task-column {
+        min-height: 160px;
+    }
+    section .task-column .heading {
+        font-size: 13px;
+    }
+    section .task-column .task {
+        font-size: 13px;
+    }
+    .modal .center {
+        width: calc(100% - 20px);
+        padding: 15px;
+    }
+    .theme-toggle {
+        width: 40px;
+        height: 40px;
+        right: 15px;
+        bottom: 15px;
+        font-size: 16px;
+    }
+}
+
+
+/* ========================= */
+
+
+/* VERY SMALL SCREEN */
+
+
+/* ========================= */
+
+@media (max-width: 320px) {
+    nav .left {
+        font-size: 14px;
+    }
+    nav button {
+        font-size: 10px;
+        padding: 7px 8px;
+    }
+    section {
+        padding: 8px;
+    }
+}
+
+
+/* ========================= */
+
+
+/* PREVENT HORIZONTAL SCROLL */
+
+
+/* ========================= */
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+/* Better mobile touch */
+
+button,
+input,
+textarea {
+    touch-action: manipulation;
+}
