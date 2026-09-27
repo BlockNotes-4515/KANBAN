@@ -2,11 +2,18 @@
 
 > **Plan. Organize. Track. Complete.**
 
-Planora is a responsive **Kanban-based task management application** designed to provide users with a simple and visual way to organize their daily work. The application represents tasks through different stages of a workflow, allowing users to understand what needs to be started, what is currently being worked on, and what has already been completed.
+'KANBAN' is a responsive **Kanban-based task management application** designed to provide users with a simple and visual way to organize their daily work. The application represents tasks through different stages of a workflow, allowing users to understand what needs to be started, what is currently being worked on, and what has already been completed.
 
 The project is developed using **HTML5, CSS3, and JavaScript**, with a strong focus on frontend fundamentals, dynamic DOM manipulation, responsive design, user interaction, and clean interface design.
 
 ---
+<br>
+<hr>
+<p align="center">
+  <img src="media/Red and White Bold Typography New York Logo1.png" alt="Planora Logo" width="150">
+</p>
+<hr>
+<br>
 
 # 1. Project Overview
 
@@ -46,6 +53,14 @@ Planora addresses this problem by introducing a Kanban-style workflow where ever
 * Lack of an intuitive workflow for moving tasks through different stages
 
 ---
+
+<br>
+<hr>
+<p align="center">
+  <img src="media/workflow diagram.png" alt="Planora Logo" width="150">
+</p>
+<hr>
+<br>
 
 # 3. Proposed Solution
 
